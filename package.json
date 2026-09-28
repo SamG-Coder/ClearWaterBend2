@@ -1,0 +1,21 @@
+{
+  "name": "clearwater-bend2",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node --experimental-transform-types scripts/build.mjs",
+    "check": "node --experimental-transform-types scripts/build.mjs --check",
+    "test": "node --experimental-transform-types scripts/test.mjs",
+    "test:reference": "node scripts/native-reference.mjs",
+    "test:browser": "node scripts/browser-test.mjs",
+    "test:cuda": "python scripts/run-cuda.py && node scripts/compare-cuda.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

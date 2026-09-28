@@ -1,0 +1,43 @@
+{
+  "initial": {
+    "ready": true,
+    "errors": [],
+    "backend": "upstream-bend-javascript-cpu",
+    "frames": 1,
+    "state": {
+      "x": 0,
+      "y": 1.55,
+      "z": 0,
+      "yaw": 0,
+      "pitch": -0.24,
+      "time": 4,
+      "sea": 1,
+      "depth": 1.8,
+      "exposure": 1,
+      "fft": 6
+    },
+    "simulationMs": 257.90000000596046,
+    "totalMs": 995.7000000029802
+  },
+  "afterDepthChange": {
+    "ready": true,
+    "errors": [],
+    "backend": "upstream-bend-javascript-cpu",
+    "frames": 2,
+    "state": {
+      "x": 0,
+      "y": 1.55,
+      "z": 0,
+      "yaw": 0,
+      "pitch": -0.24,
+      "time": 4,
+      "sea": 1,
+      "depth": 3,
+      "exposure": 1,
+      "fft": 6
+    },
+    "simulationMs": 243.29999999701977,
+    "totalMs": 943.3999999910593
+  },
+  "pageErrors": []
+}

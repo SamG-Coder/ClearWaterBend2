@@ -1,0 +1,6 @@
+{
+  "revision": "ef46ff1bf02a306bad94ddc18286d25d3d902c14",
+  "compiled": false,
+  "executed": false,
+  "error": "Expected ';', found 'long'. (2:23)\ntypedef unsigned long long u64;\r\n                      ^"
+}

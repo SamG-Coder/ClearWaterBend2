@@ -1,0 +1,17 @@
+{
+  "reference": "unmodified upstream Bend JavaScript compiler",
+  "target": "unmodified upstream Bend CUDA device compiler and scheduler",
+  "width": 128,
+  "height": 128,
+  "maxChannelError": 3,
+  "rmsChannelError": 0.026684767619686453,
+  "differentChannels": 12,
+  "channelsOverTwo": 1,
+  "criteria": {
+    "maxChannelError": 4,
+    "rmsChannelError": 0.15,
+    "changedChannelFraction": 0.002
+  },
+  "shiftedImageNegativeControl": true,
+  "passed": true
+}

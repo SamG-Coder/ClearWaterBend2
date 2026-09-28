@@ -1,0 +1,6 @@
+node_modules/
+dist/
+generated/
+reports/*.png
+reports/*.ppm
+reports/*.bin

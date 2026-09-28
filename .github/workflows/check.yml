@@ -1,0 +1,24 @@
+name: Check Bend source and reference
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:reference
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - name: Browser reference
+        run: |
+          npm start > /tmp/clearwater-bend-server.log 2>&1 &
+          npm run test:browser

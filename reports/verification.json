@@ -1,0 +1,60 @@
+{
+  "bendRevision": "3378e6237ed431d17629efd36d24c96241815b7e",
+  "backend": "unmodified upstream JavaScript emitter",
+  "checks": [
+    {
+      "name": "Unmodified checker rejects false proof and affine double use",
+      "passed": true
+    },
+    {
+      "name": "U32 hash including overflow and high bit",
+      "passed": true
+    },
+    {
+      "name": "4x4 packed FFT sign -1 vs independent DFT",
+      "maxError": 6.486164068064681e-7,
+      "passed": true
+    },
+    {
+      "name": "4x4 packed FFT sign 1 vs independent DFT",
+      "maxError": 4.201461187847144e-7,
+      "passed": true
+    },
+    {
+      "name": "8x8 packed FFT sign -1 vs independent DFT",
+      "maxError": 0.0000025834221553111547,
+      "passed": true
+    },
+    {
+      "name": "8x8 packed FFT sign 1 vs independent DFT",
+      "maxError": 0.0000020045846786942434,
+      "passed": true
+    },
+    {
+      "name": "16x16 packed FFT sign -1 vs independent DFT",
+      "maxError": 0.000021002560522731528,
+      "passed": true
+    },
+    {
+      "name": "16x16 packed FFT sign 1 vs independent DFT",
+      "maxError": 0.00002048227276230108,
+      "passed": true
+    },
+    {
+      "name": "Original Clearwater CUDA source compiled to C++ oracle",
+      "cells": 36,
+      "maxSeedRelative": 3.8796295311652024e-10,
+      "maxEvolveRelative": 0.0000015799702802250212,
+      "passed": true
+    },
+    {
+      "name": "Bilinear wrap across both sides of seam",
+      "passed": true
+    },
+    {
+      "name": "64x36 Bend render, finite packed opaque image",
+      "distinctPixels": 1286,
+      "passed": true
+    }
+  ]
+}

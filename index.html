@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clearwater</title><link rel="stylesheet" href="style.css"></head>
+<body><canvas id="water"></canvas>
+<header><a href="#">CLEARWATER</a><span>Bend 2</span></header>
+<main><p class="eyebrow">THE OCEAN, WRITTEN IN BEND</p><h1>Room to drift.<br>Light through water.</h1><p class="intro">Three wave spectra. One continuous horizon.</p></main>
+<section id="panel" aria-label="Ocean controls">
+  <div class="row"><strong>Ocean controls</strong><button id="play">Play</button></div>
+  <label>Sea energy <output id="sea-value">1.0</output><input id="sea" type="range" min="0.1" max="3" step="0.1" value="1"></label>
+  <label>Water depth <output id="depth-value">1.8 m</output><input id="depth" type="range" min="0.4" max="8" step="0.1" value="1.8"></label>
+  <label>Exposure <output id="exposure-value">1.0</output><input id="exposure" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+  <label>FFT size <select id="fft"><option value="5">32 × 32 · preview</option><option value="6" selected>64 × 64 · preview</option><option value="8">256 × 256 · original size</option></select></label>
+  <label>Frame size <select id="resolution"><option value="256" selected>256 × 144</option><option value="384">384 × 216</option><option value="512">512 × 288</option></select></label>
+  <p class="hint">Drag to look · WASD to move · E/Q up/down</p>
+</section>
+<footer><div><span id="dot"></span><span id="status">Compiling reference view…</span><small id="backend">Upstream Bend 2 → JavaScript · CPU reference</small></div><nav><a href="src/clearwater.bend" target="_blank">Bend source ↗</a><a href="THIRD_PARTY_NOTICES.md" target="_blank">Licenses ↗</a></nav></footer>
+<script type="module" src="app.js"></script></body></html>
