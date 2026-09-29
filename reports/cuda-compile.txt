@@ -4,250 +4,250 @@ clearwater.cu(8): warning #161-D: unrecognized #pragma
 
 Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
 
-clearwater.cu(1787): warning #177-D: variable "_a_11" was declared but never referenced
+clearwater.cu(1788): warning #177-D: variable "_a_11" was declared but never referenced
     u32 _a_11 = r3;
         ^
 
-clearwater.cu(1791): warning #177-D: variable "_b_7" was declared but never referenced
+clearwater.cu(1792): warning #177-D: variable "_b_7" was declared but never referenced
     u32 _b_7 = r7;
         ^
 
-clearwater.cu(1889): warning #177-D: variable "_a_1" was declared but never referenced
+clearwater.cu(1890): warning #177-D: variable "_a_1" was declared but never referenced
     u32 _a_1 = r1;
         ^
 
-clearwater.cu(1890): warning #177-D: variable "_a_2" was declared but never referenced
+clearwater.cu(1891): warning #177-D: variable "_a_2" was declared but never referenced
     u32 _a_2 = r2;
         ^
 
-clearwater.cu(1902): warning #177-D: variable "_a_3" was declared but never referenced
+clearwater.cu(1903): warning #177-D: variable "_a_3" was declared but never referenced
     u32 _a_3 = r0;
         ^
 
-clearwater.cu(1903): warning #177-D: variable "_a_4" was declared but never referenced
+clearwater.cu(1904): warning #177-D: variable "_a_4" was declared but never referenced
     u32 _a_4 = r1;
         ^
 
-clearwater.cu(1930): warning #177-D: variable "_a_8" was declared but never referenced
+clearwater.cu(1931): warning #177-D: variable "_a_8" was declared but never referenced
     u32 _a_8 = r0;
         ^
 
-clearwater.cu(1932): warning #177-D: variable "_a_10" was declared but never referenced
+clearwater.cu(1933): warning #177-D: variable "_a_10" was declared but never referenced
     u32 _a_10 = r2;
         ^
 
-clearwater.cu(2245): warning #177-D: variable "_b_3" was declared but never referenced
+clearwater.cu(2246): warning #177-D: variable "_b_3" was declared but never referenced
     u32 _b_3 = r7;
         ^
 
-clearwater.cu(2249): warning #177-D: variable "_c_3" was declared but never referenced
+clearwater.cu(2250): warning #177-D: variable "_c_3" was declared but never referenced
     u32 _c_3 = r11;
         ^
 
-clearwater.cu(2287): warning #177-D: variable "_a_1" was declared but never referenced
+clearwater.cu(2288): warning #177-D: variable "_a_1" was declared but never referenced
     u32 _a_1 = r1;
         ^
 
-clearwater.cu(2288): warning #177-D: variable "_a_2" was declared but never referenced
+clearwater.cu(2289): warning #177-D: variable "_a_2" was declared but never referenced
     u32 _a_2 = r2;
         ^
 
-clearwater.cu(2289): warning #177-D: variable "_a_3" was declared but never referenced
+clearwater.cu(2290): warning #177-D: variable "_a_3" was declared but never referenced
     u32 _a_3 = r3;
         ^
 
-clearwater.cu(2442): warning #177-D: variable "_a_4" was declared but never referenced
+clearwater.cu(2443): warning #177-D: variable "_a_4" was declared but never referenced
     u32 _a_4 = r0;
         ^
 
-clearwater.cu(2445): warning #177-D: variable "_a_7" was declared but never referenced
+clearwater.cu(2446): warning #177-D: variable "_a_7" was declared but never referenced
     u32 _a_7 = r3;
         ^
 
-clearwater.cu(2494): warning #177-D: variable "_a_12" was declared but never referenced
+clearwater.cu(2495): warning #177-D: variable "_a_12" was declared but never referenced
     u32 _a_12 = r0;
         ^
 
-clearwater.cu(2495): warning #177-D: variable "_a_13" was declared but never referenced
+clearwater.cu(2496): warning #177-D: variable "_a_13" was declared but never referenced
     u32 _a_13 = r1;
         ^
 
-clearwater.cu(2496): warning #177-D: variable "_a_14" was declared but never referenced
+clearwater.cu(2497): warning #177-D: variable "_a_14" was declared but never referenced
     u32 _a_14 = r2;
         ^
 
-clearwater.cu(2516): warning #177-D: variable "_d_0" was declared but never referenced
+clearwater.cu(2517): warning #177-D: variable "_d_0" was declared but never referenced
     u32 _d_0 = r4;
         ^
 
-clearwater.cu(2517): warning #177-D: variable "_d_1" was declared but never referenced
+clearwater.cu(2518): warning #177-D: variable "_d_1" was declared but never referenced
     u32 _d_1 = r5;
         ^
 
-clearwater.cu(2568): warning #177-D: variable "_a_2" was declared but never referenced
+clearwater.cu(2569): warning #177-D: variable "_a_2" was declared but never referenced
     u32 _a_2 = r2;
         ^
 
-clearwater.cu(2569): warning #177-D: variable "_a_3" was declared but never referenced
+clearwater.cu(2570): warning #177-D: variable "_a_3" was declared but never referenced
     u32 _a_3 = r3;
         ^
 
-clearwater.cu(2609): warning #177-D: variable "_a_8" was declared but never referenced
+clearwater.cu(2610): warning #177-D: variable "_a_8" was declared but never referenced
     u32 _a_8 = r2;
         ^
 
-clearwater.cu(2610): warning #177-D: variable "_a_9" was declared but never referenced
+clearwater.cu(2611): warning #177-D: variable "_a_9" was declared but never referenced
     u32 _a_9 = r3;
         ^
 
-clearwater.cu(2613): warning #177-D: variable "_b_2" was declared but never referenced
+clearwater.cu(2614): warning #177-D: variable "_b_2" was declared but never referenced
     u32 _b_2 = r6;
         ^
 
-clearwater.cu(2614): warning #177-D: variable "_b_3" was declared but never referenced
+clearwater.cu(2615): warning #177-D: variable "_b_3" was declared but never referenced
     u32 _b_3 = r7;
         ^
 
-clearwater.cu(2694): warning #177-D: variable "_a_4" was declared but never referenced
+clearwater.cu(2695): warning #177-D: variable "_a_4" was declared but never referenced
     u32 _a_4 = r2;
         ^
 
-clearwater.cu(2695): warning #177-D: variable "_a_5" was declared but never referenced
+clearwater.cu(2696): warning #177-D: variable "_a_5" was declared but never referenced
     u32 _a_5 = r3;
         ^
 
-clearwater.cu(2698): warning #177-D: variable "_b_2" was declared but never referenced
+clearwater.cu(2699): warning #177-D: variable "_b_2" was declared but never referenced
     u32 _b_2 = r6;
         ^
 
-clearwater.cu(2699): warning #177-D: variable "_b_3" was declared but never referenced
+clearwater.cu(2700): warning #177-D: variable "_b_3" was declared but never referenced
     u32 _b_3 = r7;
         ^
 
-clearwater.cu(2856): warning #177-D: variable "_c_7" was declared but never referenced
+clearwater.cu(2857): warning #177-D: variable "_c_7" was declared but never referenced
     u32 _c_7 = r0;
         ^
 
-clearwater.cu(2857): warning #177-D: variable "_c_8" was declared but never referenced
+clearwater.cu(2858): warning #177-D: variable "_c_8" was declared but never referenced
     u32 _c_8 = r1;
         ^
 
-clearwater.cu(2858): warning #177-D: variable "_c_9" was declared but never referenced
+clearwater.cu(2859): warning #177-D: variable "_c_9" was declared but never referenced
     u32 _c_9 = r2;
         ^
 
-clearwater.cu(2861): warning #177-D: variable "_c_12" was declared but never referenced
+clearwater.cu(2862): warning #177-D: variable "_c_12" was declared but never referenced
     u32 _c_12 = r5;
         ^
 
-clearwater.cu(2862): warning #177-D: variable "_c_13" was declared but never referenced
+clearwater.cu(2863): warning #177-D: variable "_c_13" was declared but never referenced
     u32 _c_13 = r6;
         ^
 
-clearwater.cu(3883): warning #177-D: variable "_x_1" was declared but never referenced
+clearwater.cu(3884): warning #177-D: variable "_x_1" was declared but never referenced
       Term _x_1 = r1;
            ^
 
-clearwater.cu(3892): warning #177-D: variable "_x_3" was declared but never referenced
+clearwater.cu(3893): warning #177-D: variable "_x_3" was declared but never referenced
       Term _x_3 = r1;
            ^
 
-clearwater.cu(6179): warning #177-D: variable "_x_0" was declared but never referenced
+clearwater.cu(6180): warning #177-D: variable "_x_0" was declared but never referenced
       Term _x_0 = r3;
            ^
 
-clearwater.cu(6224): warning #177-D: variable "_x_1" was declared but never referenced
+clearwater.cu(6225): warning #177-D: variable "_x_1" was declared but never referenced
       Term _x_1 = r3;
            ^
 
-clearwater.cu(6313): warning #177-D: variable "_x_0" was declared but never referenced
+clearwater.cu(6314): warning #177-D: variable "_x_0" was declared but never referenced
       Term _x_0 = r4;
            ^
 
-clearwater.cu(6359): warning #177-D: variable "_x_1" was declared but never referenced
+clearwater.cu(6360): warning #177-D: variable "_x_1" was declared but never referenced
       Term _x_1 = r0;
            ^
 
-clearwater.cu(6657): warning #177-D: variable "_q_1" was declared but never referenced
+clearwater.cu(6658): warning #177-D: variable "_q_1" was declared but never referenced
       u32 _q_1 = r1;
           ^
 
-clearwater.cu(7322): warning #177-D: variable "_f_3" was declared but never referenced
+clearwater.cu(7323): warning #177-D: variable "_f_3" was declared but never referenced
         u32 _f_3 = e.mem[_sp_0 + 2];
             ^
 
-clearwater.cu(7323): warning #177-D: variable "_f_4" was declared but never referenced
+clearwater.cu(7324): warning #177-D: variable "_f_4" was declared but never referenced
         u32 _f_4 = e.mem[_sp_0 + 3];
             ^
 
-clearwater.cu(8533): warning #177-D: variable "_x_1" was declared but never referenced
+clearwater.cu(8534): warning #177-D: variable "_x_1" was declared but never referenced
       Term _x_1 = r14;
            ^
 
-clearwater.cu(9390): warning #177-D: variable "_x_2" was declared but never referenced
+clearwater.cu(9391): warning #177-D: variable "_x_2" was declared but never referenced
       Term _x_2 = r3;
            ^
 
-clearwater.cu(9744): warning #177-D: variable "_c_5" was declared but never referenced
+clearwater.cu(9745): warning #177-D: variable "_c_5" was declared but never referenced
       u32 _c_5 = STK(-4);
           ^
 
-clearwater.cu(9745): warning #177-D: variable "_n_5" was declared but never referenced
+clearwater.cu(9746): warning #177-D: variable "_n_5" was declared but never referenced
       u32 _n_5 = STK(-3);
           ^
 
-clearwater.cu(9746): warning #177-D: variable "_d_5" was declared but never referenced
+clearwater.cu(9747): warning #177-D: variable "_d_5" was declared but never referenced
       Term _d_5 = STK(-2);
            ^
 
-clearwater.cu(10354): warning #177-D: variable "_a_7" was declared but never referenced
+clearwater.cu(10355): warning #177-D: variable "_a_7" was declared but never referenced
       Term _a_7 = STK(-2);
            ^
 
-clearwater.cu(10355): warning #177-D: variable "_b_2" was declared but never referenced
+clearwater.cu(10356): warning #177-D: variable "_b_2" was declared but never referenced
       Term _b_2 = STK(-1);
            ^
 
-clearwater.cu(2999): warning #177-D: variable "rp" was declared but never referenced
+clearwater.cu(3000): warning #177-D: variable "rp" was declared but never referenced
     WL_BANK
     ^
 
-clearwater.cu(788): warning #177-D: function "nat_mul" was declared but never referenced
+clearwater.cu(789): warning #177-D: function "nat_mul" was declared but never referenced
   INLINE u64 nat_mul(Env e, u64 a, u64 b) {
              ^
 
-clearwater.cu(804): warning #177-D: function "a32_fadd" was declared but never referenced
+clearwater.cu(805): warning #177-D: function "a32_fadd" was declared but never referenced
   A32_LOOP(fadd, f32_rewrap(f32_unbox(o) + f32_unbox(v)))
   ^
 
-clearwater.cu(1151): warning #177-D: function "term_word" was declared but never referenced
+clearwater.cu(1152): warning #177-D: function "term_word" was declared but never referenced
   INLINE Term term_word(Env e, Term w) {
               ^
 
-clearwater.cu(1180): warning #177-D: function "blk_read" was declared but never referenced
+clearwater.cu(1181): warning #177-D: function "blk_read" was declared but never referenced
   INLINE Term blk_read(DEV u64* H, bool arr, u64 loc, u32 i) {
               ^
 
-clearwater.cu(1195): warning #177-D: function "blk_at" was declared but never referenced
+clearwater.cu(1196): warning #177-D: function "blk_at" was declared but never referenced
   INLINE u32 blk_at(Term a, u64 i, u32 lgs) {
              ^
 
-clearwater.cu(1218): warning #177-D: function "blk_copy" was declared but never referenced
+clearwater.cu(1219): warning #177-D: function "blk_copy" was declared but never referenced
   OUTLINE Term blk_copy(Env e, Term a) {
                ^
 
-clearwater.cu(1226): warning #177-D: function "blk_node" was declared but never referenced
+clearwater.cu(1227): warning #177-D: function "blk_node" was declared but never referenced
   INLINE Term blk_node(Env e, Term l, Term r) {
               ^
 
-clearwater.cu(1249): warning #177-D: function "blk_half" was declared but never referenced
+clearwater.cu(1250): warning #177-D: function "blk_half" was declared but never referenced
   INLINE Term blk_half(Env e, Term a, u32 hi) {
               ^
 
-clearwater.cu(1272): warning #177-D: function "blk_new" was declared but never referenced
+clearwater.cu(1273): warning #177-D: function "blk_new" was declared but never referenced
   INLINE Term blk_new(Env e, bool arr, u64 d, u32 lgs, u32 n, THR Term* v) {
               ^
 
-clearwater.cu(1389): warning #177-D: function "root_take" was declared but never referenced
+clearwater.cu(1390): warning #177-D: function "root_take" was declared but never referenced
   static u32 root_take(DEV u64* H, THR Term* v) {
              ^

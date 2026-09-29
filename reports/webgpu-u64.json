@@ -1,0 +1,8 @@
+{
+  "backend": "WebGPU",
+  "cases": 177,
+  "operations": 135,
+  "assertions": 23895,
+  "oracle": "JavaScript BigInt modulo 2^64",
+  "passed": true
+}

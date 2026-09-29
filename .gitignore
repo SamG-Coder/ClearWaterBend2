@@ -4,3 +4,5 @@ generated/
 reports/*.png
 reports/*.ppm
 reports/*.bin
+reports/*-run.log
+reports/webgpu-development.json

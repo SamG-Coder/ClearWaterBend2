@@ -552,10 +552,13 @@ def render_frame(d: Nat, +start: U32, +w: U32, +h: U32, +c: Camera, +o: Ocean, +
       a b = render_frame(q, start, w, h, c, o, pebbles, size) render_frame(q, (start + (1 << q) : U32), w, h, c, o, pebbles, size)
       Pixels{a, b}
 
-def showcase() -> Image:
+def render_scene(d: Nat, +resolution: U32) -> Image:
   o = ocean(5n, 42, 4.0, 1.0, 1.8)
   camera = {Camera{0.0, 1.55, 0.0, 0.0, F32.neg(0.24), 1.8, 1.0} : Camera}
-  image(7n, 0, 0, 128, camera, o, Leaf{V4{0.3, 0.27, 0.2, 1.0}}, 1, 128)
+  image(d, 0, 0, resolution, camera, o, Leaf{V4{0.3, 0.27, 0.2, 1.0}}, 1, resolution)
+
+def showcase() -> Image:
+  render_scene!(7n, 128)
 
 def main() -> Image:
   showcase!()

@@ -26,9 +26,30 @@ license and this attribution. `scripts/compiler.mjs` adapts file loading on
 Windows; `scripts/run-cuda.py` supplies a device-memory host adapter. Neither
 adds language primitives or modifies Bend's evaluator or checker.
 
+The WebGPU bridge in `src/webgpu/` adapts the generated CUDA evaluator's memory,
+allocation and scheduling boundaries. `runtime.wgsl` and generated evaluator
+artifacts derive from the upstream Apache-2.0 runtime; retain the Bend license
+and attribution when distributing them. The checker and CUDA emitter remain
+unchanged. The WebGPU scheduler uses separate compute dispatches rather than CUDA's
+native synchronization and launch behavior.
+
+## CUDA WebShader
+
+The browser GPU host imports the unmodified `GpuRuntime` from
+[SamG-Coder/cuda-webshader](https://github.com/SamG-Coder/cuda-webshader), pinned
+at `ef46ff1bf02a306bad94ddc18286d25d3d902c14` in `vendor/webshader`.
+Copyright (c) 2026 SamG-Coder and CUDA WebShader contributors. MIT license:
+[licenses/CUDA-WebShader-MIT.txt](licenses/CUDA-WebShader-MIT.txt).
+Its runtime/compiler JavaScript and license are included in the static build.
+The Bend bridge supplies WGSL artifacts to its public runtime API; it does not
+claim the existing CUDA WebShader parser supports arbitrary upstream Bend CUDA.
+
 ## Development and execution tools
 
 Playwright (Microsoft, Apache-2.0) is a development-only browser test dependency.
 It is not shipped in the browser build. NVIDIA CUDA/NVRTC and the NVIDIA driver
 are external native execution dependencies installed by the user; their binaries
 are not redistributed in this repository or browser build.
+
+Clang is a build-time dependency for the typed CUDA/C++ AST. LLVM/Clang binaries
+are not bundled in this repository or the static site.

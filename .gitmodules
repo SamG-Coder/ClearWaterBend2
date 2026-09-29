@@ -1,3 +1,6 @@
 [submodule "vendor/bend"]
 	path = vendor/bend
 	url = https://github.com/bendlang/bend.git
+[submodule "vendor/webshader"]
+	path = vendor/webshader
+	url = https://github.com/SamG-Coder/cuda-webshader.git

@@ -1,0 +1,54 @@
+{
+  "ready": true,
+  "backend": "bend-cuda-webshader-direct-wgsl",
+  "errors": [],
+  "progress": {
+    "stage": "evaluate",
+    "rounds": 724,
+    "dispatches": 725,
+    "tasks": 16,
+    "seconds": 2.884899999991059
+  },
+  "width": 32,
+  "height": 32,
+  "compileMs": 545674.200000003,
+  "executionMs": 2947.5,
+  "rounds": 730,
+  "dispatches": 731,
+  "peakTasks": 4096,
+  "heapBytes": 73162624,
+  "device": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits",
+      "subgroup-size-control",
+      "subgroups",
+      "float32-filterable",
+      "shader-f16",
+      "timestamp-query"
+    ],
+    "timestampQuery": true,
+    "limits": {
+      "maxComputeInvocationsPerWorkgroup": 1024,
+      "maxComputeWorkgroupStorageSize": 16384,
+      "maxStorageBufferBindingSize": 2147483644
+    }
+  },
+  "peakChannelError": 5,
+  "rmsChannelError": 0.15520483776824312,
+  "differentChannels": 11,
+  "shiftedRms": 25.00450480246843,
+  "oracle": "unmodified upstream Bend JavaScript render_scene",
+  "runtime": "CUDA WebShader GpuRuntime artifact API",
+  "floatPrecision": 32,
+  "comparedColorChannels": 3072,
+  "criteria": {
+    "peak": 6,
+    "rms": 0.5
+  },
+  "passed": true,
+  "generatedWgslSha256": "60bba897188c484c13f9992bf1ce8961b72a3f0e2986f8f77939357d604c112b"
+}
