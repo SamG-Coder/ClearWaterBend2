@@ -1,0 +1,21 @@
+{
+  "bendRevision": "3378e6237ed431d17629efd36d24c96241815b7e",
+  "cudaEmitter": "cuda-scalar-v1",
+  "bendSourceSha256": "db99dfa4d8a435b39ce71861e5d71baf1c3e002c71e865c8de2b21bdbefdf623",
+  "baseline": {
+    "cudaBytes": 349199,
+    "cudaSha256": "5fbd31e13dc473f03195b933ac21aade41a17b93ed1c98abbe695886c212ebdd",
+    "deviceFunctions": 68,
+    "workLoopScratchWords": 681,
+    "helperOutputArrays": 237,
+    "loweredEvaluatorBytes": 708068
+  },
+  "optimized": {
+    "cudaBytes": 350079,
+    "cudaSha256": "3289643aa4fbea43818a189b0de6029030eebe28ba70304bed5d47980520a50a",
+    "deviceFunctions": 57,
+    "workLoopScratchWords": 29,
+    "helperOutputArrays": 0,
+    "loweredEvaluatorBytes": 656368
+  }
+}

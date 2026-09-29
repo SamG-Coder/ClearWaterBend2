@@ -1,0 +1,8 @@
+{
+  "backend": "direct WebGPU memory/scheduler adapter",
+  "heapExhaustion": 3,
+  "queueExhaustion": 22,
+  "retiredUntilNextRound": true,
+  "recycledBlockReused": true,
+  "passed": true
+}

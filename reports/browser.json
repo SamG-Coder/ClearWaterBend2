@@ -16,8 +16,8 @@
       "exposure": 1,
       "fft": 6
     },
-    "simulationMs": 257.90000000596046,
-    "totalMs": 995.7000000029802
+    "simulationMs": 263.59999999403954,
+    "totalMs": 1003.7999999970198
   },
   "afterDepthChange": {
     "ready": true,
@@ -36,8 +36,8 @@
       "exposure": 1,
       "fft": 6
     },
-    "simulationMs": 243.29999999701977,
-    "totalMs": 943.3999999910593
+    "simulationMs": 239.40000000596046,
+    "totalMs": 929.1000000089407
   },
   "pageErrors": []
 }

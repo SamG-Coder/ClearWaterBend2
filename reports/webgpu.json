@@ -1,0 +1,53 @@
+{
+  "ready": true,
+  "backend": "bend-cuda-webshader-direct-wgsl",
+  "errors": [],
+  "progress": {
+    "stage": "evaluate",
+    "rounds": 724,
+    "dispatches": 725,
+    "tasks": 16,
+    "seconds": 2.88079999999702
+  },
+  "width": 32,
+  "height": 32,
+  "compileMs": 325500,
+  "executionMs": 2946.7000000029802,
+  "rounds": 730,
+  "dispatches": 731,
+  "peakTasks": 4096,
+  "heapBytes": 73003840,
+  "device": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "device": "",
+    "description": "",
+    "features": [
+      "core-features-and-limits",
+      "subgroup-size-control",
+      "shader-f16",
+      "float32-filterable",
+      "timestamp-query",
+      "subgroups"
+    ],
+    "timestampQuery": true,
+    "limits": {
+      "maxComputeInvocationsPerWorkgroup": 1024,
+      "maxComputeWorkgroupStorageSize": 16384,
+      "maxStorageBufferBindingSize": 2147483644
+    }
+  },
+  "generatedWgslSha256": "54ecb2845c3a6b5958e5c7d752882513df7026276308b41e887b00d24f348c95",
+  "peakChannelError": 5,
+  "rmsChannelError": 0.15520483776824312,
+  "differentChannels": 11,
+  "comparedColorChannels": 3072,
+  "shiftedRms": 25.00450480246843,
+  "oracle": "unmodified upstream Bend JavaScript render_scene",
+  "runtime": "CUDA WebShader GpuRuntime artifact API",
+  "criteria": {
+    "peak": 6,
+    "rms": 0.5
+  },
+  "passed": true
+}

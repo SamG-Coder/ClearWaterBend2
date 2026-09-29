@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clearwater · Bend 2 WebGPU</title>
+<style>
+:root{color-scheme:dark;font:16px/1.6 system-ui;background:#07191f;color:#d5e7e9}body{max-width:1080px;margin:auto;padding:36px 24px}header{display:flex;justify-content:space-between;gap:20px;align-items:center}a{color:#96dfd4}h1{font-size:clamp(2rem,5vw,4rem);line-height:1.1;letter-spacing:-.04em;margin:50px 0 20px}p{max-width:760px;color:#b5cacc}small{color:#a3bfc3}.view{display:grid;grid-template-columns:minmax(280px,540px) 1fr;gap:32px;align-items:start;margin:32px 0}canvas{width:100%;aspect-ratio:1;background:#102c34;image-rendering:auto;border:1px solid #29474e;border-radius:8px}button{font:inherit;border:1px solid #4b777e;border-radius:6px;background:#163d46;color:#e4f6f3;padding:8px 16px;cursor:pointer;margin:0 8px 12px 0}button:disabled{opacity:.45;cursor:default}#status{min-height:4em}pre{white-space:pre-wrap;font-size:13px;color:#8dcbc2}details{border-top:1px solid #29474e;padding-top:16px}footer{border-top:1px solid #29474e;padding-top:20px;font-size:14px} @media(max-width:760px){.view{grid-template-columns:1fr}header{align-items:start;flex-direction:column}}
+</style></head><body>
+<header><strong>CLEARWATER / BEND 2</strong><nav><a href="index.html">Interactive CPU reference</a> · <a href="https://github.com/SamG-Coder/ClearWaterBend2">GitHub</a></nav></header>
+<h1>Bend’s ocean.<br>Running on WebGPU.</h1>
+<p>Real Bend 2 source, checked and compiled by upstream Bend. Its generated CUDA evaluator is compiled directly to WGSL and dispatched through CUDA WebShader.</p>
+<div class="view"><canvas id="image" width="128" height="128" aria-label="Clearwater image computed by Bend on WebGPU"></canvas><section>
+<strong>WebGPU runtime test</strong><p id="status" role="status">Preparing the GPU…</p>
+<label>Image size <select id="size"><option value="16">16 × 16</option><option value="32" selected>32 × 32</option><option value="64">64 × 64</option><option value="128">128 × 128</option></select></label><br>
+<button id="render" disabled>Render again</button><button id="cancel">Cancel</button><button id="save" disabled>Save PNG</button>
+<p><small>Three 32 × 32 wave cascades · time 4 seconds · depth 1.8 m. This runs the same checked <code>render_scene()</code> called by the native CUDA showcase, at the selected image size.</small></p>
+<p><small>The first shader compilation can take several minutes. Let it finish. The interactive controls remain in the separately labelled CPU reference.</small></p>
+<p><small><strong>Precision:</strong> this renderer uses 32-bit floating-point arithmetic (Float32). Small rounding differences can occur between WebGPU, native CUDA and the JavaScript reference.</small></p><pre id="metrics"></pre>
+</section></div>
+<details><summary>What actually runs where?</summary><p>Bend owns the spectra, FFTs, choppy surface and optical renderer. Clang reads the upstream-generated CUDA device program. Its functions and control flow are translated directly into compiled WGSL functions. The adapter preserves Bend's 64-bit integer tags as pairs of 32-bit words and supplies WebGPU task queues and memory allocation. Browser JavaScript schedules compute dispatches, copies the final pixels and updates this page. There is no bytecode interpreter or CPU rendering fallback.</p><p>The adapter targets this pinned Bend compiler and its pure image program. It does not implement arbitrary CUDA, native IO or the full original Clearwater effects.</p></details>
+<footer><a href="src/clearwater.bend">Bend source</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party licenses</a></footer>
+<script type="module" src="webgpu-app.js"></script></body></html>
