@@ -5,7 +5,7 @@ const overridden=new Set(['a32_swp','a32_load_acq','a32_cas','a32_exch','a32_cmp
 const children=n=>n?.inner||[];
 const ident=s=>'v_'+s.replace(/[^a-zA-Z0-9_]/g,'_');
 export function qtype(n){let s=(n?.type?.desugaredQualType||n?.type?.qualType||'void').replace(/\b(const|volatile|restrict|struct)\b/g,'').trim();return s.replace(/\b(Term|u64|u32a|u32|u8|f32)\b/g,k=>aliases[k]).replace(/\s+/g,' ').trim();}
-export function scalar(q){if(q.includes('*')||q.includes('['))return 'u32';if(q==='unsigned long long')return 'vec2<u32>';if(['unsigned int','unsigned char','unsigned long'].includes(q))return 'u32';if(['int','long','char'].includes(q))return 'i32';if(q==='bool')return 'bool';if(q==='float'||q==='double')return 'f32';if(q==='Env')return 'Env';if(q==='void')return '';throw Error('Unsupported C type '+q);}
+export function scalar(q){if(q.includes('*')||q.includes('['))return 'u32';if(q==='unsigned long long')return 'vec2<u32>';if(['unsigned int','unsigned char','unsigned long'].includes(q))return 'u32';if(['int','long','char'].includes(q))return 'i32';if(q==='bool')return 'bool';if(q==='float'||q==='double')return 'f32';if(q.startsWith('BendResult_'))return q;if(q==='Env')return 'Env';if(q==='void')return '';throw Error('Unsupported C type '+q);}
 export function words(q){if(q.includes('*'))return 1;const arr=/^(.*?)\[(\d+)\](.*)$/.exec(q);if(arr)return Number(arr[2])*words(arr[1]+arr[3]);if(q==='Env')return 2;if(q==='Bank')return 6;return q==='unsigned long long'?2:1;}
 const pointee=q=>q.replace(/\s*\*\s*$/,'').trim();
 export const unwrap=n=>['ParenExpr','ImplicitCastExpr','CStyleCastExpr','ConstantExpr'].includes(n?.kind)?unwrap(children(n)[0]):n;
@@ -19,6 +19,11 @@ export function lower(ast){
   function reach(name){if(used.has(name)||overridden.has(name))return;const fn=funcs.get(name);if(!fn)throw Error('Missing function '+name);used.add(name);walk(fn,n=>{if(n.kind==='CallExpr'){const callee=unwrap(children(n)[0]);const k=callee?.referencedDecl?.name;if(funcs.has(k))reach(k);}});}
   reach('work_loop');reach('window_pix');
   const chunks=['struct Env { mem:u32, alc:u32 }'];
+  // Preserve the Bend emitter's by-value helper result ABI as local WGSL
+  // records, instead of spilling those values through emulated pointers.
+  for(const n of ast.inner)if(['RecordDecl','CXXRecordDecl'].includes(n.kind)&&n.name?.startsWith('BendResult_')&&n.completeDefinition){
+    chunks.push(`struct ${n.name} { ${children(n).filter(f=>f.kind==='FieldDecl').map(f=>`${f.name}:${scalar(qtype(f))}`).join(',')} }`);
+  }
   const evaluator=new WeakMap();
   function constant(n){
     if(!n?.kind)return null;if(evaluator.has(n))return evaluator.get(n);
@@ -40,7 +45,7 @@ export function lower(ast){
     evaluator.set(n,v);return v;
   }
   const literal=(v,t)=>t==='vec2<u32>'?`vec2<u32>(${BigInt.asUintN(32,v)}u,${BigInt.asUintN(32,v>>32n)}u)`:t==='bool'?v?'true':'false':t==='i32'?`${BigInt.asIntN(32,v)}i`:`${BigInt.asUintN(32,v)}u`;
-  const zero=t=>t==='vec2<u32>'?'vec2<u32>(0u)':t==='bool'?'false':t==='f32'?'0.0f':t==='Env'?'Env(0u,0u)':t==='i32'?'0i':'0u';
+  const zero=t=>t==='vec2<u32>'?'vec2<u32>(0u)':t==='bool'?'false':t==='f32'?'0.0f':t.startsWith('BendResult_')?t+'()':t==='Env'?'Env(0u,0u)':t==='i32'?'0i':'0u';
   function cast(code,a,b,q=''){
     if(a===b)return q==='unsigned char'?`(${code}&255u)`:code;
     if(b==='bool')return a==='vec2<u32>'?`any(${code}!=vec2<u32>(0u))`:`(${code}!=${zero(a)})`;

@@ -1,6 +1,6 @@
 {
   "reference": "unmodified upstream Bend JavaScript compiler",
-  "target": "unmodified upstream Bend CUDA device compiler and scheduler",
+  "target": "Bend CUDA with local emitter optimization and upstream scheduler",
   "width": 128,
   "height": 128,
   "maxChannelError": 3,

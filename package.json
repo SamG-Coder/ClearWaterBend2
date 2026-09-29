@@ -9,11 +9,12 @@
   "scripts": {
     "build": "node --experimental-transform-types scripts/build.mjs && node scripts/build-webgpu.mjs",
     "check": "node --experimental-transform-types scripts/build.mjs --check",
-    "test": "node --experimental-transform-types scripts/test.mjs",
+    "test": "node scripts/test-word-repack.mjs && node --experimental-transform-types scripts/test.mjs",
     "test:reference": "node scripts/native-reference.mjs",
     "test:browser": "node scripts/browser-test.mjs",
     "test:webgpu": "node scripts/test-webgpu-u64.mjs && node scripts/test-webgpu-runtime.mjs && node scripts/test-webgpu.mjs",
     "test:cuda": "python scripts/run-cuda.py && node scripts/compare-cuda.mjs",
+    "test:cuda-emitter": "node --experimental-transform-types scripts/test-cuda-emitter.mjs",
     "start": "node scripts/serve.mjs"
   },
   "devDependencies": {

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "pixels": 16384,
+  "oracle": "independent BigInt and unmodified upstream JavaScript",
+  "checks": [
+    "unsigned division near 2^32",
+    "division and remainder by zero",
+    "wrapping multiplication",
+    "inlined helper caller liveness"
+  ]
+}

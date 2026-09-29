@@ -6,7 +6,7 @@ if (!process.argv.includes('--check')) {
   await mkdir('generated', {recursive:true});
   await writeFile('generated/clearwater.mjs', result.javascript);
   await writeFile('generated/clearwater.cu', result.cuda());
-  console.log('Generated JavaScript and CUDA using the unmodified upstream emitters.');
+  console.log('Generated upstream JavaScript and CUDA with the local Bend emitter optimization.');
   await mkdir('dist/generated', {recursive:true});
   for (const file of ['index.html','style.css','app.js','worker.js','LICENSE','THIRD_PARTY_NOTICES.md','src/clearwater.bend','assets/seabed.jpg','licenses/Bend-Apache-2.0.txt']) {
     const target='dist/'+file;

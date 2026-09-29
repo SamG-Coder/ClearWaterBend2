@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Includes host-boundary initialization adapted from bendlang/bend.
-"""Run unmodified upstream Bend device code on Windows using device allocations.
+"""Run generated Bend device code on Windows using device allocations.
 
 This host adapter replaces the POSIX/concurrent-managed-memory host requirement.
 It does not replace Bend's compiler, allocator, evaluator or GPU fork/join scheduler.
@@ -83,7 +83,9 @@ extern "C" __global__ void clearwater_status(u64* H,u64* out) {
   out[4]=a32_load(a32_at(H,H_BUMP));
 }
 '''
-source_path = ROOT / 'generated/clearwater.cu'
+source_path = Path(os.environ.get('BEND_CUDA_SOURCE', str(ROOT / 'generated/clearwater.cu')))
+report_dir = Path(os.environ.get('BEND_CUDA_REPORT_DIR', str(ROOT / 'reports')))
+report_dir.mkdir(parents=True, exist_ok=True)
 source = source_path.read_bytes()
 check(init(0),'driver init')
 device=C.c_int();check(device_get(C.byref(device),0),'device')
@@ -102,7 +104,7 @@ if not cache.exists():
     result=compile_program(program,len(options),(C.c_char_p*len(options))(*options))
     length=size_t();check(log_size(program,C.byref(length)),'compiler log size')
     log=C.create_string_buffer(length.value);check(get_log(program,log),'compiler log')
-    (ROOT/'reports/cuda-compile.txt').write_text(log.value.decode(),encoding='utf8')
+    (report_dir/'cuda-compile.txt').write_text(log.value.decode().rstrip()+'\n',encoding='utf8')
     if result:
         print(log.value.decode());check(result,'compile')
     check(cubin_size(program,C.byref(length)),'cubin size')
@@ -142,10 +144,10 @@ try:
     rgba=(u32*(128*128))();check(download(rgba,pixels,128*128*4),'image readback')
     elapsed=(time.perf_counter()-start)*1000
     raw=bytes(channel for p in rgba for channel in [(p>>16)&255,(p>>8)&255,p&255])
-    (ROOT/'reports/cuda.ppm').write_bytes(b'P6\n128 128\n255\n'+raw)
-    (ROOT/'reports/cuda-rgb.bin').write_bytes(raw)
-    report={'device':name.value.decode(),'bendSourceSha256':hashlib.sha256(source).hexdigest(),'compiler':'unmodified upstream Bend 2 + NVIDIA NVRTC','host':'device-memory Windows adapter','resolution':[128,128],'heapBytes':heap_bytes,'passes':passes,'allocatedPages':pages,'compileMs':compile_ms,'executionAndReadbackMs':elapsed,'runtimeError':error,'distinctColors':len(set(rgba))}
-    (ROOT/'reports/cuda.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
+    (report_dir/'cuda.ppm').write_bytes(b'P6\n128 128\n255\n'+raw)
+    (report_dir/'cuda-rgb.bin').write_bytes(raw)
+    report={'device':name.value.decode(),'bendSourceSha256':hashlib.sha256(source).hexdigest(),'compiler':'Bend 2 with local CUDA emitter optimization + NVIDIA NVRTC','host':'device-memory Windows adapter','resolution':[128,128],'heapBytes':heap_bytes,'passes':passes,'allocatedPages':pages,'compileMs':compile_ms,'executionAndReadbackMs':elapsed,'runtimeError':error,'distinctColors':len(set(rgba))}
+    (report_dir/'cuda.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
     print(json.dumps(report,indent=2))
 finally:
     check(free(pixels),'free pixels');check(free(status),'free status');check(free(heap),'free heap')

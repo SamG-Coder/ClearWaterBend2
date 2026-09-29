@@ -1,7 +1,7 @@
 {
   "device": "NVIDIA GeForce RTX 5080",
-  "bendSourceSha256": "5fbd31e13dc473f03195b933ac21aade41a17b93ed1c98abbe695886c212ebdd",
-  "compiler": "unmodified upstream Bend 2 + NVIDIA NVRTC",
+  "bendSourceSha256": "3289643aa4fbea43818a189b0de6029030eebe28ba70304bed5d47980520a50a",
+  "compiler": "Bend 2 with local CUDA emitter optimization + NVIDIA NVRTC",
   "host": "device-memory Windows adapter",
   "resolution": [
     128,
@@ -9,9 +9,9 @@
   ],
   "heapBytes": 1073741824,
   "passes": 94,
-  "allocatedPages": 36049,
-  "compileMs": 4141.2654999876395,
-  "executionAndReadbackMs": 879.7152999904938,
+  "allocatedPages": 36088,
+  "compileMs": 4383.618599997135,
+  "executionAndReadbackMs": 885.748100001365,
   "runtimeError": 0,
   "distinctColors": 4233
 }

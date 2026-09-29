@@ -20,8 +20,9 @@ const meta={...result.metadata,ENTRY:result.metadata.FID_RENDER_SCENE,PRIVATE_WO
 const header=Object.entries(meta).map(([key,value])=>`const CW_${key}:u32=${value}u;`).join('\n');
 await writeFile('generated/clearwater.wgsl',header+'\n'+runtime+'\n'+result.source);
 await writeFile('generated/webgpu-metadata.json',JSON.stringify(meta,null,2));
-const hashes={};for(const path of ['src/clearwater.bend','generated/clearwater.cu','generated/clearwater.wgsl'])hashes[path]=createHash('sha256').update(await readFile(path)).digest('hex');
-await writeFile('generated/webgpu-manifest.json',JSON.stringify({bend:'3378e6237ed431d17629efd36d24c96241815b7e',webshader:webshaderRevision,hashes,backend:'direct-wgsl',floatPrecision:32},null,2)+'\n');
+const hashes={};for(const path of ['src/clearwater.bend','compiler/cuda-emitter.mjs','compiler/return-values.mjs','compiler/native-result.ts.inc','compiler/repack-word.ts.inc','generated/clearwater.cu','generated/clearwater.wgsl'])hashes[path]=createHash('sha256').update(await readFile(path)).digest('hex');
+const cudaEmitter=/^\/\/ Bend CUDA emitter: (.+)$/m.exec(cuda)?.[1]??'unknown';
+await writeFile('generated/webgpu-manifest.json',JSON.stringify({bend:'3378e6237ed431d17629efd36d24c96241815b7e',cudaEmitter,webshader:webshaderRevision,hashes,backend:'direct-wgsl',floatPrecision:32},null,2)+'\n');
 await mkdir('dist/generated',{recursive:true});
 await rm('dist/generated/clearwater-program.bin',{force:true});
 for(const file of ['webgpu.html','webgpu-app.js','webgpu.js','generated/clearwater.wgsl','generated/webgpu-metadata.json','generated/webgpu-manifest.json'])await copyFile(file,'dist/'+file);

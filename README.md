@@ -5,8 +5,9 @@ reference view, an independently executed NVIDIA CUDA render, and an experimenta
 WebGPU evaluator hosted by CUDA WebShader.
 
 The implementation is [`src/clearwater.bend`](src/clearwater.bend). It passes the
-unmodified upstream Bend 2 checker and compiles through the unmodified upstream
-JavaScript and CUDA emitters. There are no foreign rendering functions, added
+unmodified upstream Bend 2 checker and uses the unmodified upstream JavaScript
+emitter as its oracle. The CUDA emitter has a local optimization patch described
+in `compiler/README.md`. There are no foreign rendering functions, added
 language primitives, unchecked definitions or hidden calls to the old CUDA ocean.
 
 **Status: incomplete Clearwater feature port; experimental WebGPU runtime.**
@@ -77,8 +78,8 @@ CUDA/JavaScript/WebGPU parity without a browser image decoder.
 
 ## WebGPU execution
 
-`npm run build` checks real Bend, emits CUDA with the unmodified upstream
-compiler, obtains its typed C++ AST from Clang, and lowers the reachable evaluator.
+`npm run build` checks real Bend, emits CUDA with the patched Bend compiler,
+obtains its typed C++ AST from Clang, and lowers the reachable evaluator.
 The build emits directly compiled WGSL functions and a WebGPU runtime adapter.
 It does not emit bytecode, run an instruction interpreter, translate an imitation
 language or substitute the original CUDA ocean equations.
@@ -107,7 +108,8 @@ python scripts/run-cuda.py
 node scripts/compare-cuda.mjs
 ```
 
-`generated/clearwater.cu` comes directly from upstream `Comp.compile_book`. The
+`generated/clearwater.cu` comes from `Comp.compile_book` with the reproducible
+local emitter patch in `compiler/cuda-emitter.mjs`. The
 Windows adapter allocates a 1 GiB device heap, initializes upstream's documented-in-
 source layout, launches its unchanged `bend_dev` scheduler, and reads the image.
 This avoids the POSIX host and concurrent managed access requirements of upstream's
